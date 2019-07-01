@@ -21,7 +21,7 @@ BACKUP_PATH = '/{}/backup_{}.7z'.format(
 
 def backup():
     with open(LOCAL_FILE, 'rb') as f:
-        print(f"Uploading {LOCAL_FILE} to Dropbox as {BACKUP_PATH}...")
+        print(f'Uploading {LOCAL_FILE} to Dropbox as {BACKUP_PATH}...')
         try:
             dbx.files_upload(
                 f.read(),
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     try:
         dbx.users_get_current_account()
     except AuthError:
-        sys.exit("ERROR: Invalid access token")
+        sys.exit('ERROR: Invalid access token')
 
     backup()
     remove()
